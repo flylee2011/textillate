@@ -64,16 +64,8 @@ resize();
 window.onresize = resize;
 
 $('[data-role="blogtitle"]').textillate({
-    loop: true,
     in: {
-      effect: "flash",
-      shuffle: false,
-      sync: false
-    },
-    out: {
-      effect: "bounce",
-      shuffle: false,
-      sync: false
+      effect: "flipInY"
     }
 });
 

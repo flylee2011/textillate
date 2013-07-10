@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Textillate Demo</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<link href="assets/animate.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="tlt">
+		<ul class="texts" style="display: none">
+			<li>生活中那些有情怀的东西</li>
+			<li>韩寒的博客</li>
+		</ul>
+	</div>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!--<script src="assets/jquery.fittext.js"></script>-->
+	<script src="assets/jquery.lettering.js"></script>
+	<script src="jquery.textillate.js"></script>
+	<script type="text/javascript">
+		
+			$('.tlt').textillate({
+				loop: true,
+				in: {
+					effect: "flash",
+					shuffle: false,
+					sync: false
+				},
+				out: {
+					effect: "pulse",
+					shuffle: false,
+					sync: false
+				}
+			});
+		
+	</script>
+    
+</body>
+</html>

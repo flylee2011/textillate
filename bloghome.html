@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="css/pages/pages.css">
+<link rel="stylesheet" href="assets/animate.css">
+<title>博客首页</title>
+</head>
+
+<body>
+<div class="f-wraper">
+  	<div class="f-wrap">
+    	<header class="bl-header bl-header-a">
+    		<div class="menu clearfix">
+            	<a href="javascript:;"><span class="dashbd b-ft-icon">*</span><span class="b-redtips">...</span></a>
+                <a href="javascript:;"><span class="usercnt b-ft-icon">.</span></a>
+            </div>
+    	</header>
+        <div class="bl-home-pic b-page">
+          <div class="header-box">
+            <div class="header-ban" style="background-image:url(img/_temp/img6.jpg);"></div>
+            <div class="article-atr"><!--输出默认背景图添加 art-default-->
+              <div class="b-new-icn"><span class="b-ft-icon">'</span><span class="n">new</span></div>
+              <hgroup class="article-info">
+                  <a href=""><h1 data-role="blogtitle" class="b-ellipsis">固生活中那些有情怀的东西</h1><h2 class="b-ellipsis">互联网影响面不断扩大深入影响实体经济与传统行业</h2></a>
+              </hgroup>
+            </div>
+          </div>
+          <div class="userinfo-box">
+          	<dl class="user-info clearfix">
+              	<dt style="background-image:url(img/_temp/head.jpg);"></dt><dd class="user-nm b-txt1">韩寒</dd><dd class="link b-txt3">韩寒的博客</dd>
+                <dd data-role="bloginfo" class="count b-txt3">
+                  <ul class="texts" style="display: none">
+                    <li>博客等级：23</li>
+                    <li>访问数：12,12334,23</li>
+                  </ul>
+                </dd>
+              </dl>
+              <div class="user-status user-follow">
+                <span class="line"></span><div class="fllw-box"><div class="fllw"><span class="b-ft-icon">!</span><i class="t">加关注</i><span class="b-ft-icon">N</span><i class="t">已关注</i></div></div>
+              </div>
+          </div>
+        </div>
+        
+	</div>
+    <div class="b-page-effect"></div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="assets/jquery.lettering.js"></script>
+<script src="jquery.textillate.js"></script>
+
+<script type="text/javascript">
+function resize(){
+	document.querySelector(".f-wrap").style.height=document.body.scrollHeight-6+'px';
+	document.querySelector(".header-ban").style.height=document.body.offsetHeight-6+"px";
+	/*document.querySelector(".f-wrap").style.height=document.body.scrollHeight-6+'px';
+	document.querySelector(".header-ban").style.height=document.body.offsetHeight-86+"px";*/
+	//横评减6, 竖屏减86
+}
+resize();
+window.onresize = resize;
+
+$('[data-role="blogtitle"]').textillate({
+    loop: true,
+    in: {
+      effect: "flash",
+      shuffle: false,
+      sync: false
+    },
+    out: {
+      effect: "bounce",
+      shuffle: false,
+      sync: false
+    }
+});
+
+$('[data-role="bloginfo"]').textillate({
+    loop: true,
+    in: {
+      effect: "bounceInLeft",
+      shuffle: false,
+      sync: false
+    },
+    out: {
+      effect: "fadeOutDown",
+      shuffle: false,
+      sync: false
+    }
+});
+</script>
+
+</body>
+</html>

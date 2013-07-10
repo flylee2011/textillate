@@ -19,11 +19,43 @@
 		</ul>
 	</div>
 
+	<form class="grid grid-pad">
+      <div class="control col-1-2">
+        <label>In Animation</label>
+        <select data-key="effect" data-type="in"></select>
+        <label class="inline checkbox"><input type="checkbox" data-key="sync" data-type="in" /> Sync</label> 
+        <label class="inline checkbox"><input type="checkbox" data-key="shuffle" data-type="in" /> Shuffle</label>
+      </div>
+      <div class="control col-1-2">
+        <label>Out Animation</label>
+        <select data-key="effect" data-type="out"></select>
+        <label class="inline checkbox"><input type="checkbox" data-key="sync" data-type="out" /> Sync</label>
+        <label class="inline checkbox"><input type="checkbox" data-key="shuffle" data-type="out" checked="checked" /> Shuffle</label>
+      </div>
+    </form>
+
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <!--<script src="assets/jquery.fittext.js"></script>-->
 	<script src="assets/jquery.lettering.js"></script>
 	<script src="jquery.textillate.js"></script>
 	<script type="text/javascript">
+
+		var $form = $('.playground form');
+		var $viewport = $('.playground .viewport');
+
+		var getFormData = function () {
+			var data = { loop: true, in: {}, out: {} };
+
+			$form.find('[data-key]').each(function () {
+			var $this = $(this)
+			  , key = $this.data('key')
+			  , type = $this.data('type');
+
+			  data[type][key] = $this.is(':checkbox') ? $this.is(':checked') : $this.val();
+			});
+
+			return data;
+	    };
 		
 			$('.tlt').textillate({
 				loop: true,

@@ -14,7 +14,7 @@
   	<div class="f-wrap">
     	<header class="bl-header bl-header-a">
     		<div class="menu clearfix">
-            	<a href="javascript:;"><span class="dashbd b-ft-icon">*</span><span class="b-redtips">...</span></a>
+            	<a href="javascript:;"><span onclick="doAnimate();" class="dashbd b-ft-icon">*</span><span class="b-redtips">...</span></a>
                 <a href="javascript:;"><span class="usercnt b-ft-icon">.</span></a>
             </div>
     	</header>
@@ -24,7 +24,7 @@
             <div class="article-atr"><!--输出默认背景图添加 art-default-->
               <div class="b-new-icn"><span class="b-ft-icon">'</span><span class="n">new</span></div>
               <hgroup class="article-info">
-                  <a href=""><h1 data-role="blogtitle" class="b-ellipsis">固生活中那些有情怀的东西</h1><h2 class="b-ellipsis">互联网影响面不断扩大深入影响实体经济与传统行业</h2></a>
+                  <a href=""><h1 style="display:none;" data-role="blogtitle" class="b-ellipsis">固生活中那些有情怀的东西...</h1><h2 class="b-ellipsis">互联网影响面不断扩大深入影响实体经济与传统行业</h2></a>
               </hgroup>
             </div>
           </div>
@@ -65,23 +65,38 @@ window.onresize = resize;
 
 $('[data-role="blogtitle"]').textillate({
     in: {
-      effect: "flipInY"
+      delay: 50,
+      effect: "rotateInUpLeft"
     }
 });
 
-$('[data-role="bloginfo"]').textillate({
-    loop: true,
-    in: {
-      effect: "bounceInLeft",
-      shuffle: false,
-      sync: false
-    },
-    out: {
-      effect: "fadeOutDown",
-      shuffle: false,
-      sync: false
-    }
-});
+function doAnimate() {
+  $('hgroup.article-info').html('<a href=""><h1 style="display:none;" data-role="blogtitle" class="b-ellipsis">生活中那些有情怀的东西...</h1><h2 class="b-ellipsis">互联网影响面不断扩大深入影响实体经济与传统行业</h2></a>');
+  
+
+  setTimeout(function() {
+    $('[data-role="blogtitle"]').textillate({
+        in: {
+          effect: "rotateInUpLeft"
+        }
+    });
+  }, 1000);
+  
+}
+
+// $('[data-role="bloginfo"]').textillate({
+//     loop: true,
+//     in: {
+//       effect: "bounceInLeft",
+//       shuffle: false,
+//       sync: false
+//     },
+//     out: {
+//       effect: "fadeOutDown",
+//       shuffle: false,
+//       sync: false
+//     }
+// });
 </script>
 
 </body>

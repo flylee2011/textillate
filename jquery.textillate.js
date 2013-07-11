@@ -124,6 +124,7 @@
 
     base.start = function (index) {
       var $next = base.$texts.find(':nth-child(' + (index || 1) + ')');
+      base.$texts.parent().css('display', '');
 
       (function run ($elem) {
         var options = $.extend({}, base.options, getData($elem));
